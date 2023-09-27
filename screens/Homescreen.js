@@ -1,4 +1,4 @@
-import { View, Text, Image, TextInput } from 'react-native'
+import { View, Text, Image, TextInput, ScrollView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 import { useLayoutEffect } from 'react'
@@ -7,6 +7,7 @@ import { Feather,Ionicons } from "@expo/vector-icons";
 import sanityClient from "../sanity";
 import { useEffect } from 'react'
 import { useState } from 'react'
+import Categories from '../components/Categories'
 
 export default function Homescreen() {
     const navigation=useNavigation()
@@ -62,6 +63,16 @@ export default function Homescreen() {
       <Feather name="sliders" size={20} color="#E33342" />
 
     </View>
+    <ScrollView
+        className="bg-gray-100"
+        contentContainerStyle={{
+          paddingBottom: 100,
+        }}
+        showsVerticalScrollIndicator={false}
+      >
+        <Categories />
+
+      </ScrollView>
     
   </SafeAreaView>
    
