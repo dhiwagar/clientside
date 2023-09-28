@@ -8,6 +8,7 @@ import sanityClient from "../sanity";
 import { useEffect } from 'react'
 import { useState } from 'react'
 import Categories from '../components/Categories'
+import Featurerow from '../components/Featurerow'
 
 export default function Homescreen() {
     const navigation=useNavigation()
@@ -42,7 +43,7 @@ export default function Homescreen() {
     <View className="flex-row pb-3 items-center mx-3 space-x-2"> 
     <Image
     source={{
-      uri: "https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png",
+      uri: "https://freelogopng.com/images/all_img/1656222511doordash-logo-transparent.png",
     }}
     className="h-10 w-10 bg-gray-300 rounded-full"
     />
@@ -71,8 +72,16 @@ export default function Homescreen() {
         showsVerticalScrollIndicator={false}
       >
         <Categories />
-
+        {featuredCategories.map((category)=>(
+        <Featurerow  key={category._id}
+        id={category._id}
+        title={category.name}
+        description={category.short_description}/>
+      ))}
+      
       </ScrollView>
+      
+    
     
   </SafeAreaView>
    

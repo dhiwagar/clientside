@@ -7,11 +7,13 @@ import Resturantscreen from './screens/Resturantscreen';
 import Basketscreen from './screens/Basketscreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { Provider } from "react-redux";
+import { store } from "./app/store";
 export default function App() {
   const Stack = createNativeStackNavigator();
   return (
     <NavigationContainer>
-
+  <Provider store={store}>
   <Stack.Navigator>
         <Stack.Screen name="Home" component={Homescreen} 
         
@@ -39,6 +41,7 @@ export default function App() {
          
         />
       </Stack.Navigator>
+      </Provider>
     </NavigationContainer>
   );
 }
