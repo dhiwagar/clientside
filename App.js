@@ -15,10 +15,7 @@ export default function App() {
     <NavigationContainer>
   <Provider store={store}>
   <Stack.Navigator>
-        <Stack.Screen name="Home" component={Homescreen} 
-        
-       
-        />
+        <Stack.Screen name="Home" component={Homescreen}/>
         <Stack.Screen name="Resturant" component={Resturantscreen} />
         <Stack.Screen name="Delivery" component={Deliveryscreen}
          options={{
@@ -34,10 +31,10 @@ export default function App() {
         <Stack.Screen 
         name="Basket" 
         component={Basketscreen}
-         options={{
-          presentation:"modal",
-          headerShown:false,
-         }}
+        options={() => ({
+          presentation: 'modal',
+         headerShown:false,
+  })}
          
         />
       </Stack.Navigator>
